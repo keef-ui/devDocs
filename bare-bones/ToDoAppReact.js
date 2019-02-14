@@ -11,10 +11,10 @@ class ToDoApp extends React.Component {
   componentWillUpdate(nextProps, nextState) { }
   render() {
     return (
-      <div id='todo_widget'>
-        <ul id="list">
+      <div id='App'>
+        <ul id="todo_widget">
           <li className="header"><h2 className='title'>My to do list </h2></li>
-          <li className="add_reset_section">
+          <li className="add_reset_section new_item">
             <input ref={this.newItem} placeholder="Add a new task..." />
           </li>
           <li className="button add">
@@ -25,7 +25,7 @@ class ToDoApp extends React.Component {
           </li>
           {this.state.list.map((value, i) => {
             return (
-              <li className="main">
+              <li className="main todo_item">
                 <input className='checkbox' type="checkbox" onClick={this._handleCheckBoxClick} />{value}
               </li>
             )
